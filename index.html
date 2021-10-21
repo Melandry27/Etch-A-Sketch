@@ -14,10 +14,21 @@
       <h1 id="header">Etch-a-sketch</h1>
       <hr />
     </header>
-
-    <div id="button-container">
-      <button id="button" onclick="openPrompt()">Click on me !</button>
+    <div id="main-container">
+      <div id="input-container">
+        <input
+          type="color"
+          name="color"
+          id="select-color"
+          value="#606060"
+          oninput="editColor(this.value)"
+        />
+        <input type="button" onclick="coalClear()" value="Clear" />
+        <button id="button" onclick="openPrompt()">Change the size</button>
+      </div>
+      <div id="grid-container">
+        <div id="grid"></div>
+      </div>
     </div>
-    <div id="main"></div>
   </body>
 </html>

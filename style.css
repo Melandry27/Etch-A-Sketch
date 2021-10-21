@@ -1,68 +1,110 @@
 body {
-  background-color: rebeccapurple;
+  background-color: lightgray;
   margin: 0;
   padding: 0;
+  font-family: Tahoma, sans-serif;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: row;
 }
 
 #header {
   -webkit-text-stroke: 1px black;
   text-align: center;
   font-size: 75px;
-  color: darksalmon;
+  color: grey;
 }
+
+#input-container {
+  display: flex;
+  flex-flow: column;
+  flex: 25%;
+  margin-top: 50px;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  background-color: transparent;
+  transition: transform 0.5s ease-in-out;
+}
+input[type="color"]:hover,
+input[type="button"]:hover,
+#button:hover {
+  transform: scale(1.1);
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border: none;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
+}
+
+input[type="button"] {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  height: 80px;
+  width: 80px;
+  font-size: 28px;
+  color: black;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
+}
+
 hr {
   margin-top: -25px;
   margin-bottom: 25px;
   background-color: black;
   border: black 1px solid;
 }
-#button-container {
-  width: 100%;
-  margin-bottom: 50px;
-}
+
 #button {
   -webkit-text-stroke: 0.5px black;
-  margin: 0 auto;
   display: block;
+  height: 80px;
+  width: 50%;
+  margin: 0 auto;
   padding: 5px 15px 5px 15px;
-  border-radius: 5px;
-  border: solid 1px black;
-  color: darksalmon;
-  background-color: salmon;
-  font-size: 24px;
-}
-#button:hover {
+  border-radius: 50px;
+  border: none;
   background-color: white;
   color: black;
+  font-size: 24px;
+  box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
+  transition: transform 0.5s ease-in-out;
 }
 
-#main {
-  margin: 0 auto;
-  height: 432px;
-  width: 432px;
-  border: 2px red solid;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
+.cell {
+  margin: 0px;
+  padding: 0px;
+  border: solid 0.1px black;
 }
 
-.a:empty {
-  align-content: stretch;
+#grid-container {
   display: flex;
-  margin: 0px 0px 0px 0px;
-  background-color: blue;
-  width: 25px;
-  height: 25px;
-  border: 1px black solid;
+  flex: 75%;
 }
 
-.b:empty {
-  align-content: stretch;
-  display: flex;
-  margin: 0px 0px 0px 0px;
-  background-color: green;
-  width: 25px;
-  height: 25px;
-  border: 1px black solid;
+#grid {
+  display: grid;
+  margin-left: 125px;
+  padding: 0;
+  width: 500px;
+  height: 500px;
+  grid-template-columns: repeat(var(--n, 32), 1fr); /* number of column here*/
+  background-color: white;
+  border: solid black 4px;
 }
